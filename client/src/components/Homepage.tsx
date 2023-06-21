@@ -6,7 +6,7 @@ function Homepage() {
     <main className=" flex w-full flex-1   flex-col items-center justify-center text-white">
       <section className="text-center ">
         <h1 className="text-gradient-to-r max-w-screen-lg from-indigo-500  to-purple-500 text-7xl font-bold">
-          The workout app for people who track every set.
+          The workout app for people who analyze.
         </h1>
 
         <p
