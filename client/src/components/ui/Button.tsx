@@ -3,7 +3,7 @@ import React, { ButtonHTMLAttributes } from "react";
 function Button({ children, className }: ButtonProps) {
   return (
     <button
-      className={`${className} bg-indigo-700 flex items-center gap-1 hover:bg-indigo-600 font-semibold text-white py-2 px-4  rounded-sm`}
+      className={`${className} flex items-center gap-1 rounded-sm bg-indigo-700 px-4 py-2 font-semibold text-white  hover:bg-indigo-500`}
     >
       {children}
     </button>
