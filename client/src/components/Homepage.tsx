@@ -20,7 +20,11 @@ function Homepage() {
 
         <div className="mx-auto flex items-center justify-center gap-6">
           <Button className=" rounded-md border-2   border-dashed border-indigo-500 bg-transparent px-8 py-3 hover:!bg-indigo-500/30">
-            <a href="" className="flex items-center gap-1">
+            <a
+              href="https://github.com/diffim/workout-tracker"
+              target="_blank"
+              className="flex items-center gap-1"
+            >
               <FaGithub /> Source
             </a>
           </Button>
