@@ -14,6 +14,17 @@ function Button({ children, className, onClick }: ButtonProps) {
   );
 }
 
+export function LinkButton({ children, className, href }: LinkProps) {
+  return (
+    <Link
+      href={href}
+      className={`${className} flex items-center gap-1 rounded-sm bg-indigo-700 px-6 py-2  font-semibold text-white  hover:bg-indigo-500`}
+    >
+      {children}
+    </Link>
+  );
+}
+
 interface ButtonProps {
   children: React.ReactNode;
 }

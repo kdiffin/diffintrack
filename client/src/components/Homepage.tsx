@@ -1,17 +1,15 @@
-import Button from "./ui/Button";
+import Button, { LinkButton } from "./ui/Button";
 import { FaGithub } from "react-icons/fa";
 import Link from "next/link";
 import { useClerk, useSignIn } from "@clerk/clerk-react";
 
 function Homepage() {
-  const { openSignIn } = useClerk();
-
   return (
     <>
       <header className="bg-transparent py-5">
         <nav className="container mx-auto flex items-center justify-between px-4">
           <h1 className="text-3xl font-bold">dfntrack.</h1>
-          <Button>Sign in</Button>
+          <LinkButton href={"/home"}>Sign in</LinkButton>
         </nav>
       </header>
 
@@ -42,9 +40,9 @@ function Homepage() {
               </a>
             </Button>
 
-            <Button onClick={() => openSignIn()} className="!px-8 !py-3">
+            <LinkButton href="/home" className="!px-8 !py-3">
               Get Started
-            </Button>
+            </LinkButton>
           </div>
         </section>
       </main>

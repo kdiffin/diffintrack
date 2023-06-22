@@ -14,7 +14,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   if (userId) {
     return {
       redirect: {
-        destination: "/ok",
+        destination: "/home",
         permanent: false,
       },
     };
