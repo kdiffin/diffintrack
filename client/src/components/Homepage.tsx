@@ -6,7 +6,7 @@ function Homepage() {
     <main className=" flex w-full flex-1   flex-col items-center justify-center text-white">
       <section className="text-center ">
         <h1 className="text-gradient-to-r max-w-screen-lg from-indigo-500  to-purple-500 text-7xl font-bold">
-          The workout app for people who analyze.
+          The workout app for the analyzers.
         </h1>
 
         <p
@@ -19,16 +19,16 @@ function Homepage() {
         </p>
 
         <div className="mx-auto flex items-center justify-center gap-6">
-          <Button className=" rounded-md border-2   border-dashed border-indigo-500 bg-transparent px-8 py-3 hover:!bg-indigo-500/30">
+          <Button className=" rounded-md bg-transparent   px-0 py-0 outline-dashed outline-2 outline-indigo-500  hover:!bg-indigo-500/30">
             <a
               href="https://github.com/diffim/workout-tracker"
               target="_blank"
-              className="flex items-center gap-1"
+              className="flex h-full flex-1 items-center  gap-1 px-8 py-3 "
             >
               <FaGithub /> Source
             </a>
           </Button>
-          <Button className=" px-9 py-3">Get Started</Button>
+          <Button className=" px-8 py-3">Get Started</Button>
         </div>
       </section>
     </main>
