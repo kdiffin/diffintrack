@@ -3,7 +3,14 @@ import Button, { LinkButton } from "./ui/Button";
 import Link from "next/link";
 import { useClerk } from "@clerk/clerk-react";
 import Avatar from "../components/ui/Avatar";
-import { MdAdd, MdEdit, MdDelete, MdLogout, MdLink } from "react-icons/md";
+import {
+  MdAdd,
+  MdEdit,
+  MdDelete,
+  MdLogout,
+  MdLink,
+  MdSettings,
+} from "react-icons/md";
 
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 
@@ -19,8 +26,8 @@ function Navbar() {
           <NavbarItem />
 
           <DropdownMenu.Root>
-            <DropdownMenu.Trigger>
-              <div>yo</div>
+            <DropdownMenu.Trigger className="h-10 w-10">
+              <Avatar />
             </DropdownMenu.Trigger>
 
             <DropdownMenuAvatar />
@@ -42,10 +49,10 @@ export function DropdownMenuAvatar() {
         e.preventDefault()
       }
       className="dropdown "
-      sideOffset={-15}
+      sideOffset={12}
     >
       <DropdownMenu.Item className="dropdown-item group ">
-        <MdLink size={20} className="text-zinc-500" /> Share
+        <MdSettings size={20} className="text-zinc-500" /> Settings
       </DropdownMenu.Item>
 
       <DropdownMenu.Item className="dropdown-item group">
