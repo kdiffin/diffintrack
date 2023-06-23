@@ -3,7 +3,7 @@ import * as RadixAvatar from "@radix-ui/react-avatar";
 
 function Avatar() {
   return (
-    <RadixAvatar.Root className=" h-[45px] w-[45px]   rounded-full bg-indigo-600 align-middle">
+    <RadixAvatar.Root className=" h-10 w-10   rounded-full bg-indigo-600 align-middle">
       <RadixAvatar.Image
         className="h-full w-full rounded-[inherit] object-cover"
         src="https://diffinlist.vercel.app/_next/image?url=https%3A%2F%2Fimages.clerk.dev%2Foauth_github%2Fimg_2QidHtU08HRUTXrX3nM1QTkjTBz.png&w=256&q=75"
