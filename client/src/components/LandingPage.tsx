@@ -2,8 +2,9 @@ import Button, { LinkButton } from "./ui/Button";
 import { FaGithub } from "react-icons/fa";
 import Link from "next/link";
 import { useClerk, useSignIn } from "@clerk/clerk-react";
+import { Avatar } from "@radix-ui/react-avatar";
 
-function Homepage() {
+function LandingPage() {
   return (
     <>
       <header className="bg-transparent py-5">
@@ -50,4 +51,4 @@ function Homepage() {
   );
 }
 
-export default Homepage;
+export default LandingPage;

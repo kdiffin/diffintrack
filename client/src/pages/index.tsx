@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
-import Homepage from "~/components/Homepage";
+import LandingPage from "~/components/LandingPage";
 import Navbar from "~/components/Navbar";
 import { useRouter } from "next/router";
 import { useAuth, useUser } from "@clerk/clerk-react";
@@ -8,21 +8,21 @@ import { useAuth, useUser } from "@clerk/clerk-react";
 import { getAuth, buildClerkProps } from "@clerk/nextjs/server";
 import { GetServerSideProps } from "next";
 
-export const getServerSideProps: GetServerSideProps = async (ctx) => {
-  const { userId } = getAuth(ctx.req);
+// export const getServerSideProps: GetServerSideProps = async (ctx) => {
+//   const { userId } = getAuth(ctx.req);
 
-  if (userId) {
-    return {
-      redirect: {
-        destination: "/home",
-        permanent: false,
-      },
-    };
-  }
-  return { props: { ...buildClerkProps(ctx.req) } };
-};
+//   if (userId) {
+//     return {
+//       redirect: {
+//         destination: "/home",
+//         permanent: false,
+//       },
+//     };
+//   }
+//   return { props: { ...buildClerkProps(ctx.req) } };
+// };
 
-export default function Home() {
+export default function Index() {
   return (
     <>
       <Head>
@@ -32,7 +32,7 @@ export default function Home() {
       </Head>
 
       <div className="background-homepage flex min-h-screen flex-col  bg-gray-900 px-8 pb-4 text-white">
-        <Homepage />
+        <LandingPage />
       </div>
     </>
   );
