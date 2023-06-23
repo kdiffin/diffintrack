@@ -11,25 +11,50 @@ import {
   MdLink,
   MdSettings,
   MdMenu,
+  MdSearch,
 } from "react-icons/md";
 
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
+import Input from "./ui/Input";
+import { useRouter } from "next/router";
 
 function Navbar() {
+  const router = useRouter();
+
+  function searchWorkout(value: string) {
+    const url = {
+      ...router.query,
+      search: value,
+    };
+
+    router.replace(url, undefined, { shallow: true });
+  }
   return (
-    <header className="mb-10 bg-transparent px-6  py-5 shadow shadow-indigo-900">
+    <header className="mb-10 bg-transparent px-6  py-5  shadow-indigo-900">
       <nav className=" mx-auto flex items-center justify-between px-4">
-        <div className="flex items-center gap-2">
+        <div className="flex flex-[0.3]  items-center gap-3">
           <div>
-            <MdMenu size={24} className="mt-[5px]" />
+            <MdMenu size={24} className="" />
           </div>
 
           <Link href={"/home"}>
-            <h1 className="text-3xl font-bold text-indigo-600">dfntrack.</h1>
+            <h1 className="pb-1 text-3xl font-bold text-indigo-700">
+              dfntrack.
+            </h1>
           </Link>
         </div>
 
-        <div className="flex flex-1 items-center justify-end gap-4">
+        <div className="  flex-[0.4]">
+          <Input
+            icon={<MdSearch className="text-zinc-500" />}
+            setValue={(value) => searchWorkout(value as string)}
+            value={router.query.search}
+            placeholder="Search workout"
+            className="rounded-md px-3 py-[9px]"
+          />
+        </div>
+
+        <div className="flex flex-[0.3]  items-center justify-end gap-4">
           <NavbarItem title={"home"} />
           <NavbarItem title={"workouts"} />
           <NavbarItem title={"statistics"} />
@@ -49,7 +74,7 @@ function Navbar() {
 
 function NavbarItem({ title }: { title: string }) {
   return (
-    <button className="text-lg font-semibold capitalize text-indigo-600">
+    <button className="text-lg font-semibold capitalize text-indigo-700">
       {title}
     </button>
   );
