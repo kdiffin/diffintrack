@@ -10,23 +10,32 @@ import {
   MdLogout,
   MdLink,
   MdSettings,
+  MdMenu,
 } from "react-icons/md";
 
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 
 function Navbar() {
   return (
-    <header className="bg-transparent py-5">
-      <nav className="container mx-auto flex items-center justify-between px-4">
-        <h1 className="text-3xl font-bold text-indigo-500">dfntrack.</h1>
+    <header className="mb-10 bg-transparent px-6  py-5 shadow shadow-indigo-900">
+      <nav className=" mx-auto flex items-center justify-between px-4">
+        <div className="flex items-center gap-2">
+          <div>
+            <MdMenu size={24} className="mt-[5px]" />
+          </div>
+
+          <Link href={"/home"}>
+            <h1 className="text-3xl font-bold text-indigo-600">dfntrack.</h1>
+          </Link>
+        </div>
 
         <div className="flex flex-1 items-center justify-end gap-4">
-          <NavbarItem />
-          <NavbarItem />
-          <NavbarItem />
+          <NavbarItem title={"home"} />
+          <NavbarItem title={"workouts"} />
+          <NavbarItem title={"statistics"} />
 
           <DropdownMenu.Root>
-            <DropdownMenu.Trigger className="h-10 w-10">
+            <DropdownMenu.Trigger className="ml-1 h-10 w-10">
               <Avatar />
             </DropdownMenu.Trigger>
 
@@ -38,11 +47,17 @@ function Navbar() {
   );
 }
 
-function NavbarItem() {
-  return <button className="capitalize">home</button>;
+function NavbarItem({ title }: { title: string }) {
+  return (
+    <button className="text-lg font-semibold capitalize text-indigo-600">
+      {title}
+    </button>
+  );
 }
 
 export function DropdownMenuAvatar() {
+  const { signOut } = useClerk();
+
   return (
     <DropdownMenu.Content
       onCloseAutoFocus={(e: { preventDefault: () => any }) =>
@@ -63,7 +78,10 @@ export function DropdownMenuAvatar() {
         <MdEdit size={20} className="text-zinc-500" /> Edit
       </DropdownMenu.Item>
 
-      <DropdownMenu.Item className="dropdown-item group ">
+      <DropdownMenu.Item
+        onSelect={() => signOut()}
+        className="dropdown-item group "
+      >
         <MdLogout size={20} className="text-zinc-500" /> Sign out
       </DropdownMenu.Item>
     </DropdownMenu.Content>
