@@ -1,12 +1,17 @@
 import React, { ComponentType, ReactNode } from "react";
 
 import Navbar from "./Navbar";
+import { Sidebar } from "./Sidebar";
 
 function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="darkbg min-h-screen text-white ">
+    <div className="darkbg flex h-screen flex-col text-white ">
       <Navbar />
-      <main className=" ">{children}</main>
+      <div className="flex flex-1">
+        <Sidebar />
+        {/* make the child component (page) full height of the screen */}
+        <main className="flex-1 [&>div]:flex-1">{children}</main>
+      </div>
     </div>
   );
 }

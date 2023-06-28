@@ -30,7 +30,7 @@ function Navbar() {
     router.replace(url, undefined, { shallow: true });
   }
   return (
-    <header className="mb-10 bg-transparent px-6  py-5  shadow-indigo-900">
+    <header className="  bg-transparent px-6  py-5 ">
       <nav className=" mx-auto flex items-center justify-between px-4">
         <div className="flex flex-[0.3]  items-center gap-3">
           <div>
@@ -38,7 +38,7 @@ function Navbar() {
           </div>
 
           <Link href={"/home"}>
-            <h1 className="pb-1 text-3xl font-bold text-indigo-700">
+            <h1 className="pb-1 text-3xl font-bold text-indigo-600">
               dfntrack.
             </h1>
           </Link>
@@ -55,9 +55,11 @@ function Navbar() {
         </div>
 
         <div className="flex flex-[0.3]  items-center justify-end gap-4">
-          <NavbarItem title={"home"} />
-          <NavbarItem title={"workouts"} />
-          <NavbarItem title={"statistics"} />
+          <div className=" hidden items-center gap-4 lg:flex">
+            <NavbarItem title={"home"} />
+            <NavbarItem title={"workouts"} />
+            <NavbarItem title={"statistics"} />
+          </div>
 
           <DropdownMenu.Root>
             <DropdownMenu.Trigger className="ml-1 h-10 w-10">
@@ -74,7 +76,7 @@ function Navbar() {
 
 function NavbarItem({ title }: { title: string }) {
   return (
-    <button className="text-lg font-semibold capitalize text-indigo-700">
+    <button className="text-lg font-semibold capitalize text-indigo-600">
       {title}
     </button>
   );
