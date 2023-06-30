@@ -23,22 +23,26 @@ function Navbar() {
 
   function searchWorkout(value: string) {
     const url = {
-      ...router.query,
-      search: value,
+      pathname: router.pathname,
+      query: {
+        ...router.query,
+        search: value,
+      },
     };
 
     router.replace(url, undefined, { shallow: true });
   }
+
   return (
-    <header className="  bg-transparent px-6  py-5 ">
-      <nav className=" mx-auto flex items-center justify-between px-4">
+    <header className="  border-b border-b-indigo-900/40 bg-transparent px-5 py-5  md:px-10 ">
+      <nav className=" mx-auto flex items-center justify-between ">
         <div className="flex flex-[0.3]  items-center gap-3">
           <div>
             <MdMenu size={24} className="" />
           </div>
 
           <Link href={"/home"}>
-            <h1 className="pb-1 text-3xl font-bold text-indigo-600">
+            <h1 className="pb-1 text-3xl font-bold text-indigo-300">
               dfntrack.
             </h1>
           </Link>
@@ -76,7 +80,7 @@ function Navbar() {
 
 function NavbarItem({ title }: { title: string }) {
   return (
-    <button className="text-lg font-semibold capitalize text-indigo-600">
+    <button className="text-lg font-semibold capitalize text-indigo-300">
       {title}
     </button>
   );

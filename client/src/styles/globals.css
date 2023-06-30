@@ -12,7 +12,7 @@ button:active {
   }
 
   .darkbg {
-    background-color: rgb(37, 41, 48);
+    background-color: #222230;
   }
 
   .subtle-scrollbar::-webkit-scrollbar {
