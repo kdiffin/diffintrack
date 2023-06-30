@@ -5,12 +5,14 @@ import { Sidebar } from "./Sidebar";
 
 function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="darkbg flex h-screen flex-col  text-white ">
+    <div className="darkbg    subtle-scrollbar  flex h-screen flex-col text-white">
       <Navbar />
-      <div className="flex flex-1 px-5 md:px-10">
+      <div className="flex  flex-1 overflow-hidden ">
         <Sidebar />
         {/* make the child component (page) full height of the screen */}
-        <main className="flex-1 [&>div]:flex-1 [&>div]:pt-5">{children}</main>
+        <main className=" dark-scrollbar flex-1 overflow-y-auto  [&>div]:pt-5">
+          {children}
+        </main>
       </div>
     </div>
   );

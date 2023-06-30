@@ -36,7 +36,7 @@ function Navbar() {
   }
 
   return (
-    <header className="  border-b border-b-indigo-900/40 bg-transparent px-5 py-5  md:px-10 ">
+    <header className="   border-b border-b-indigo-900/40 bg-transparent px-5 py-5  md:px-10 ">
       <nav className=" mx-auto flex items-center justify-between ">
         <div className="flex flex-[0.3]  items-center gap-3">
           <div>

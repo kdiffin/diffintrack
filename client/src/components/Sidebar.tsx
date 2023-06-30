@@ -1,6 +1,6 @@
 export function Sidebar() {
   return (
-    <div className="flex w-40 flex-col justify-between border-r border-r-indigo-900/40 pt-5">
+    <div className=" flex h-screen w-40 flex-col justify-between border-r border-r-indigo-900/40 pt-5">
       <div>
         <SidebarItem name="yo" />
         <SidebarItem name="yo" />
