@@ -2,7 +2,7 @@ import React from "react";
 import Button, { LinkButton } from "./ui/Button";
 import Link from "next/link";
 import { useClerk } from "@clerk/clerk-react";
-import Avatar from "../components/ui/Avatar";
+import Avatar from "./ui/UserAttributes";
 import {
   MdAdd,
   MdEdit,
@@ -17,9 +17,11 @@ import {
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import Input from "./ui/Input";
 import { useRouter } from "next/router";
+import { useUser } from "@clerk/nextjs";
 
 function Navbar() {
   const router = useRouter();
+  const { user, isLoaded } = useUser();
 
   function searchWorkout(value: string) {
     const url = {
@@ -67,7 +69,11 @@ function Navbar() {
 
           <DropdownMenu.Root>
             <DropdownMenu.Trigger className="ml-1 h-10 w-10">
-              <Avatar />
+              <Avatar
+                fallbackUsername={user && user.username ? user.username : ""}
+                src={user ? user.profileImageUrl : ""}
+                loading={!isLoaded}
+              />
             </DropdownMenu.Trigger>
 
             <DropdownMenuAvatar />
