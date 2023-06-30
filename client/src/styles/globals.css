@@ -32,7 +32,8 @@ body {
     @apply bg-indigo-900/20;
   }
 
-  .subtle-scrollbar *::-webkit-scrollbar-thumb:hover {
+  .subtle-scrollbar *::-webkit-scrollbar-thumb:hover,
+  .subtle-scrollbar *::-webkit-scrollbar-thumb:active {
     @apply bg-indigo-900/50;
   }
 
