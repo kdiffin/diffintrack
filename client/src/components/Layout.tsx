@@ -5,7 +5,7 @@ import { Sidebar } from "./Sidebar";
 
 function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="darkbg    subtle-scrollbar  flex h-screen flex-col text-white">
+    <div className="darkbg      flex h-screen flex-col text-white">
       <Navbar />
       <div className="flex  flex-1 overflow-hidden ">
         <Sidebar />

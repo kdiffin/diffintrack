@@ -11,7 +11,7 @@ export default function Input(props: InputProps) {
     <div
       className={
         props.className +
-        " flex w-full items-center  gap-2 rounded-sm bg-indigo-900/20  p-2 shadow-[0_0_2px_1px]  shadow-indigo-900 focus-within:bg-indigo-900/30 focus-within:shadow-[0_0_0_2px] focus-within:shadow-indigo-600/50  hover:bg-indigo-900/30  "
+        " flex w-full items-center  gap-2  rounded-sm  bg-primary p-2   shadow-[0_0_2px_1px] shadow-indigo-900 focus-within:bg-secondary focus-within:shadow-[0_0_0_2px] focus-within:shadow-indigo-600/50  hover:bg-secondary  "
       }
     >
       {props.icon ? props.icon : null}

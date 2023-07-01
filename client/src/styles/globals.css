@@ -2,7 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-button:active {
+button:active,
+a:active {
   transform: scale(0.95);
 }
 
@@ -20,33 +21,38 @@ body {
     background-color: #222230;
   }
 
-  .subtle-scrollbar *::-webkit-scrollbar {
-    width: 5px;
+  .no-scrollbar::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+  }
+
+  .subtle-scrollbar::-webkit-scrollbar {
     background-color: transparent;
-    height: 6px;
+    width: 8px;
   }
 
-  .subtle-scrollbar *::-webkit-scrollbar-thumb {
+  .subtle-scrollbar::-webkit-scrollbar-thumb {
     border-radius: 10px;
-
-    @apply bg-indigo-900/20;
+    @apply bg-slate-600;
   }
 
-  .subtle-scrollbar *::-webkit-scrollbar-thumb:hover,
-  .subtle-scrollbar *::-webkit-scrollbar-thumb:active {
-    @apply bg-indigo-900/50;
+  .subtle-scrollbar::-webkit-scrollbar-thumb:hover,
+  .subtle-scrollbar::-webkit-scrollbar-thumb:active {
+    @apply bg-slate-500;
   }
 
   .dropdown {
-    @apply z-20 min-w-[220px] rounded-sm
-    bg-zinc-800  p-2 shadow-[0px_10px_38px_-10px_rgba(22,_23,_24,_0.35),_0px_10px_20px_-15px_rgba(22,_23,_24,_0.2)]
+    background-color: #27273a;
+
+    @apply z-20 mr-2 min-w-[220px] rounded-sm
+      p-2 shadow-[0px_10px_38px_-10px_rgba(22,_23,_24,_0.35),_0px_10px_20px_-15px_rgba(22,_23,_24,_0.2)]
       will-change-[opacity,transform] data-[side=bottom]:animate-slideUpAndFade data-[side=left]:animate-slideRightAndFade 
       data-[side=right]:animate-slideLeftAndFade data-[side=top]:animate-slideDownAndFade;
   }
 
   .dropdown-item {
     @apply relative flex h-10 max-w-[220px] select-none    items-center gap-2  rounded-sm px-4  text-sm 
- leading-none outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-zinc-700  data-[disabled]:text-zinc-500;
+ leading-none outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-indigo-300/20  data-[disabled]:text-zinc-500;
     white-space: nowrap;
   }
 

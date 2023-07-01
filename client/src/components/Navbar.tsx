@@ -44,15 +44,13 @@ function Navbar() {
           </div>
 
           <Link href={"/home"}>
-            <h1 className="pb-1 text-3xl font-bold text-indigo-300">
-              dfntrack.
-            </h1>
+            <h1 className="pb-1 text-3xl font-bold text-accent">dfntrack.</h1>
           </Link>
         </div>
 
         <div className="  flex-[0.4]">
           <Input
-            icon={<MdSearch className="text-zinc-500" />}
+            icon={<MdSearch className="text-accent" />}
             setValue={(value) => searchWorkout(value as string)}
             value={router.query.search}
             placeholder="Search workout"
@@ -86,7 +84,7 @@ function Navbar() {
 
 function NavbarItem({ title }: { title: string }) {
   return (
-    <button className="text-lg font-semibold capitalize text-indigo-300">
+    <button className="text-lg font-semibold capitalize text-accent">
       {title}
     </button>
   );
@@ -104,22 +102,22 @@ export function DropdownMenuAvatar() {
       sideOffset={12}
     >
       <DropdownMenu.Item className="dropdown-item group ">
-        <MdSettings size={20} className="text-zinc-500" /> Settings
+        <MdSettings size={20} className="text-accent" /> Settings
       </DropdownMenu.Item>
 
       <DropdownMenu.Item className="dropdown-item group">
-        <MdAdd size={20} className="text-zinc-500" /> Ok
+        <MdAdd size={20} className="text-accent" /> Ok
       </DropdownMenu.Item>
 
       <DropdownMenu.Item className="dropdown-item group ">
-        <MdEdit size={20} className="text-zinc-500" /> Edit
+        <MdEdit size={20} className="text-accent" /> Edit
       </DropdownMenu.Item>
 
       <DropdownMenu.Item
         onSelect={() => signOut()}
         className="dropdown-item group "
       >
-        <MdLogout size={20} className="text-zinc-500" /> Sign out
+        <MdLogout size={20} className="text-accent" /> Sign out
       </DropdownMenu.Item>
     </DropdownMenu.Content>
   );

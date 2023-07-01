@@ -4,7 +4,10 @@ import Card from "~/components/ui/Card";
 import withLayout from "~/components/Layout";
 import Input from "~/components/ui/Input";
 import { Username } from "~/components/ui/UserAttributes";
-import { MdHandshake } from "react-icons/md";
+import { MdHandshake, MdHistory } from "react-icons/md";
+import { CALENDAR_DATA } from "~/mockdata";
+import CalendarComponent from "~/components/Calendar";
+import { divergingColorInterpolators } from "@nivo/colors";
 
 function home() {
   const { user } = useUser();
@@ -14,42 +17,106 @@ function home() {
         <div className="mb-2 text-3xl font-bold text-white ">
           <Username />
         </div>
-        <p className="font-medium text-indigo-300">
-          Welcome to the your tracker
-        </p>
+        <p className="font-medium text-accent">Welcome to the your tracker</p>
       </div>
 
-      <div className="  flex gap-10 overflow-x-auto pb-3  ">
-        <ChartContainer
-          title="Arms"
-          icon={<MdHandshake size={30} />}
-          increase="20"
-          progress="40"
-        />
-        <ChartContainer
-          title="Chest"
-          icon={<MdHandshake size={30} />}
-          increase="20"
-          progress="40"
-        />
-        <ChartContainer
-          title="Back"
-          icon={<MdHandshake size={30} />}
-          increase="20"
-          progress="40"
-        />
-        <ChartContainer
-          title="Shoulder"
-          icon={<MdHandshake size={30} />}
-          increase="20"
-          progress="40"
-        />{" "}
-        <ChartContainer
-          title="Legs"
-          icon={<MdHandshake size={30} />}
-          increase="20"
-          progress="40"
-        />{" "}
+      {/* ROW 1 */}
+
+      <div className="flex flex-col gap-5">
+        <div className=" !no-scrollbar  col-span-12 flex gap-5 overflow-x-auto   ">
+          <ChartContainer
+            title="Arms"
+            icon={<MdHandshake size={30} className=" text-accent" />}
+            increase="20"
+            progress="40"
+          />
+          <ChartContainer
+            title="Chest"
+            icon={<MdHandshake size={30} className=" text-accent" />}
+            increase="20"
+            progress="40"
+          />
+          <ChartContainer
+            title="Back"
+            icon={<MdHandshake size={30} className=" text-accent" />}
+            increase="20"
+            progress="40"
+          />
+          <ChartContainer
+            title="Shoulder"
+            icon={<MdHandshake size={30} className=" text-accent" />}
+            increase="20"
+            progress="40"
+          />{" "}
+          <ChartContainer
+            title="Legs"
+            icon={<MdHandshake size={30} className=" text-accent" />}
+            increase="20"
+            progress="40"
+          />{" "}
+        </div>
+
+        {/* ROW 2 */}
+        <div className=" flex flex-col gap-5 xl:flex-row">
+          {/* <CalendarComponent data={CALENDAR_DATA} /> */}
+          <div className="flex-1 bg-primary p-6  xl:flex-[0.65] ">a</div>
+
+          {/* RECENT WORKOUTS */}
+          <div className="subtle-scrollbar flex max-h-64 flex-col gap-2 overflow-y-auto pr-2  xl:flex-[0.35]">
+            <div className="flex items-center gap-2 bg-primary p-4 font-medium ">
+              Recent Workouts
+            </div>
+
+            {[1, 1, 1, 1, 11, 11, 1, 1, 1, 1, 1, 1, 11, 1].map(() => (
+              <div className="flex items-center justify-between bg-primary p-4 hover:bg-secondary">
+                <div className="flex flex-col ">
+                  <p className="font-medium">Bicep Curl</p>
+                  <p className="text-accent">Arms</p>
+                </div>
+
+                <div className="text-gray-500">2023-20-11</div>
+
+                <button className="rounded-sm  bg-accent px-3 py-1">
+                  visit
+                </button>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* ROW 3 */}
+        <div className=" flex flex-col gap-5 xl:flex-row">
+          {/* WORKOUT ACCURACY */}
+          <div className="  flex  flex-1 flex-col bg-primary p-6   ">
+            <p className="flex items-center gap-2  font-medium ">
+              Overall workout accuracy
+            </p>
+
+            <div className="flex flex-col items-center justify-center ">
+              <div className="my-3 flex h-36 w-36 items-center justify-center rounded-full border-4 border-accent text-2xl font-semibold">
+                A+
+              </div>
+
+              <p className=" mt-2 text-accent ">
+                Doing great buddy, keep it up!
+              </p>
+            </div>
+          </div>
+
+          {/* SOCIALS */}
+          <div className="  flex  flex-1 flex-col bg-primary px-6 py-8   ">
+            <p className="flex items-center gap-2  font-medium ">
+              Where to contact me
+            </p>
+          </div>
+
+          {/* CONTINUE TO WORKOUTS */}
+          <div className="  flex  flex-1 flex-col bg-primary px-6 py-8  ">
+            <p className="flex items-center gap-2  font-medium ">
+              Done tracking your stats?
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );
@@ -70,24 +137,22 @@ function ChartContainer({
 }) {
   return (
     <div
-      className={`${className} flex items-center justify-center bg-indigo-900/20 px-6 py-4 `}
+      className={`${className} flex items-center justify-center rounded-sm bg-primary px-6 py-10 focus-within:bg-secondary hover:bg-secondary `}
     >
       <div className="mr-20 flex flex-col gap-2">
         <div>{icon}</div>
 
-        <div className="text-3xl font-semibold">{title}</div>
+        <div className="text-2xl font-semibold">{title}</div>
 
-        <p className=" min-w-max font-medium text-indigo-300">
-          Workout Accuracy
-        </p>
+        <p className=" min-w-max font-medium text-accent">Workout Accuracy</p>
       </div>
 
-      <div className="  flex flex-col justify-between gap-6">
-        <div>
-          <ProgressCircle progress={50} />
-        </div>
+      <div className="  flex flex-col items-center justify-center  gap-3">
+        {/* <ProgressCircle progress={50} /> */}
 
-        <p className="italic text-indigo-300">+{increase}%</p>
+        <div className="flex h-24 w-24 items-center justify-center rounded-full border-4 border-accent text-xl font-medium">
+          50%{" "}
+        </div>
       </div>
     </div>
   );

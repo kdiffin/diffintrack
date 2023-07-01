@@ -4,6 +4,13 @@ export default {
   content: ["./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      colors: {
+        primary: "#252440",
+        secondary: "#2B2954",
+        accent: "#a5b4fc",
+        accent2: "#3b82f6",
+        // Add more color definitions as needed
+      },
       keyframes: {
         overlayShow: {
           from: { opacity: "0" },
