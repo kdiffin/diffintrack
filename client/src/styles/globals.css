@@ -26,6 +26,11 @@ body {
     height: 0px;
   }
 
+  .transition-fadein {
+    transition: opacity 0.3s ease-in 0s;
+    opacity: 0;
+  }
+
   .subtle-scrollbar::-webkit-scrollbar {
     background-color: transparent;
     width: 8px;

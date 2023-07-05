@@ -97,53 +97,88 @@ function home() {
               Overall workout rating
             </p>
 
-            <div className="flex flex-col items-center justify-center ">
-              <div className="my-4 flex h-36 w-36 items-center justify-center rounded-full border-4 border-accent text-2xl font-semibold">
-                A+
+            <div className="flex h-full  flex-col items-center justify-center ">
+              <div className="group relative my-4 flex h-36 w-36 items-center justify-center rounded-full border-4 border-accent text-2xl font-semibold">
+                <p className="absolute opacity-100  transition-opacity duration-300  group-hover:opacity-0">
+                  A+
+                </p>
+
+                <p className="transition-fadein absolute group-hover:opacity-100 group-hover:delay-500 ">
+                  90%
+                </p>
               </div>
 
               <p className="  mt-1  ">Doing great buddy, keep it up!</p>
             </div>
           </div>
-          {/* SOCIALS */}
+
           <div className="  flex  flex-1 flex-col bg-primary p-6   ">
             <p className="flex items-center gap-2 font-medium  capitalize ">
-              Where to contact me
+              Minutes of cardio this week
             </p>
 
-            <div className="mt-4 flex flex-col  justify-center ">
-              <div className="flex items-center gap-2  p-[6px]  ">
-                <FaGithub className=" text-accent" size={22} />{" "}
-                <p className="    font-medium  ">Github</p>
+            <div className="flex h-full items-center  justify-center gap-8 ">
+              <div className="flex flex-col items-center justify-center">
+                <div className="group relative my-3 flex h-32 w-32 items-center justify-center rounded-full border-4 border-accent text-2xl font-semibold">
+                  <p className="absolute opacity-100  transition-opacity duration-300  ">
+                    A+
+                  </p>
+                </div>
+
+                <p className="">Overall rating</p>
               </div>
 
-              <div className="my-2 h-[1px] bg-secondary" />
+              <div className="flex flex-col items-center justify-center">
+                <div className="group relative my-3 flex h-32 w-32 items-center justify-center rounded-full border-4 border-accent text-2xl font-semibold">
+                  <p className="absolute ">2,5</p>
+                </div>
 
-              <div className=" flex items-center gap-2 p-[6px] ">
-                <FaDiscord className=" text-accent" size={22} />{" "}
-                <p className="    font-medium  ">Discord</p>
+                <p className="">Hours Of Cardio</p>
               </div>
 
-              <div className="my-2 h-[1px] bg-secondary" />
+              <div className="flex flex-col items-center justify-center">
+                <div className="group relative my-3 flex h-32 w-32 items-center justify-center rounded-full border-4 border-accent text-2xl font-semibold">
+                  <p className=" absolute  ">40%</p>
+                </div>
 
-              <div className="flex items-center gap-2 p-[6px]  ">
-                <MdMail className=" text-accent" size={22} />{" "}
-                <p className="   font-medium  ">Mail</p>
-              </div>
-
-              <div className="my-2 h-[1px] bg-secondary" />
-
-              <div className="flex items-center gap-2 p-[6px]  ">
-                <FaInstagram className=" text-accent" size={22} />{" "}
-                <p className="  font-medium  ">Instagram</p>
+                <p className="">Workout Accuracy</p>
               </div>
             </div>
           </div>
-          {/* CONTINUE TO WORKOUTS */}
-          <div className="  flex  flex-1 flex-col bg-primary p-6  ">
+
+          {/* MINUTES STRETCHED */}
+          <div className="  flex  flex-1 flex-col bg-primary p-6   ">
             <p className="flex items-center gap-2 font-medium  capitalize ">
               Minutes stretched this week
             </p>
+
+            <div className="flex h-full items-center  justify-center gap-8 ">
+              <div className="flex flex-col items-center justify-center">
+                <div className="group relative my-3 flex h-32 w-32 items-center justify-center rounded-full border-4 border-accent text-2xl font-semibold">
+                  <p className="absolute opacity-100  transition-opacity duration-300  ">
+                    A+
+                  </p>
+                </div>
+
+                <p className="">Overall rating</p>
+              </div>
+
+              <div className="flex flex-col items-center justify-center">
+                <div className="group relative my-3 flex h-32 w-32 items-center justify-center rounded-full border-4 border-accent text-2xl font-semibold">
+                  <p className="absolute ">24,2348</p>
+                </div>
+
+                <p className="">Hours Stretched</p>
+              </div>
+
+              <div className="flex flex-col items-center justify-center">
+                <div className="group relative my-3 flex h-32 w-32 items-center justify-center rounded-full border-4 border-accent text-2xl font-semibold">
+                  <p className=" absolute  ">90%</p>
+                </div>
+
+                <p className="">Workout Accuracy</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -176,7 +211,7 @@ function ChartContainer({
         <p className=" min-w-max font-medium text-accent">Workout Accuracy</p>
       </div>
 
-      <div className="  flex flex-col items-center justify-center  gap-3">
+      <div className="  flex flex-col items-center justify-center  ">
         {/* <ProgressCircle progress={50} /> */}
 
         <div className="flex h-24 w-24 items-center justify-center rounded-full border-4 border-accent text-xl font-medium">
