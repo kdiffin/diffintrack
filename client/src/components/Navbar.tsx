@@ -43,7 +43,7 @@ function Navbar() {
             <MdMenu size={24} className="" />
           </div>
 
-          <Link href={"/home"}>
+          <Link href={"/track"}>
             <h1 className="pb-1 text-3xl font-bold text-accent">dfntrack.</h1>
           </Link>
         </div>

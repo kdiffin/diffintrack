@@ -10,7 +10,7 @@ function LandingPage() {
       <header className="bg-transparent py-6">
         <nav className="container mx-auto flex items-center justify-between px-4">
           <h1 className="text-3xl font-bold">dfntrack.</h1>
-          <LinkButton href={"/home"}>Sign in</LinkButton>
+          <LinkButton href={"/track"}>Sign in</LinkButton>
         </nav>
       </header>
 
@@ -41,7 +41,7 @@ function LandingPage() {
               </a>
             </Button>
 
-            <LinkButton href="/home" className="!px-8 !py-3">
+            <LinkButton href="/track" className="!px-8 !py-3">
               Get Started
             </LinkButton>
           </div>
