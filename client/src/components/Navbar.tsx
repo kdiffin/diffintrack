@@ -60,9 +60,9 @@ function Navbar() {
 
         <div className="flex flex-[0.3]  items-center justify-end gap-4">
           <div className=" hidden items-center gap-4 lg:flex">
-            <NavbarItem title={"home"} />
-            <NavbarItem title={"workouts"} />
-            <NavbarItem title={"statistics"} />
+            <NavbarItem href="/track" title={"tracker"} />
+            <NavbarItem href="/exercises" title={"exercises"} />
+            <NavbarItem href="/track" title={"statistics"} />
           </div>
 
           <DropdownMenu.Root>
@@ -82,11 +82,11 @@ function Navbar() {
   );
 }
 
-function NavbarItem({ title }: { title: string }) {
+function NavbarItem({ title, href }: { title: string; href: string }) {
   return (
-    <button className="text-lg font-semibold capitalize text-accent">
+    <Link href={href} className="text-lg font-semibold capitalize text-accent">
       {title}
-    </button>
+    </Link>
   );
 }
 

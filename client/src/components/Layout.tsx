@@ -10,7 +10,7 @@ function Layout({ children }: { children: React.ReactNode }) {
       <div className="flex  flex-1 overflow-hidden ">
         <Sidebar />
         {/* make the child component (page) full height of the screen */}
-        <main className=" dark-scrollbar flex-1 overflow-y-auto  [&>div]:pt-5">
+        <main className=" dark-scrollbar flex-1 overflow-y-auto [&>div]:px-5 [&>div]:pt-5 [&>div]:md:px-10">
           {children}
         </main>
       </div>

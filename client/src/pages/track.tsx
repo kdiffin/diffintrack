@@ -13,7 +13,7 @@ import { FaDiscord, FaGithub, FaInstagram } from "react-icons/fa";
 function home() {
   const { user } = useUser();
   return (
-    <div className="px-5 md:px-10 ">
+    <div>
       <div className="mb-6">
         <div className="mb-2 text-3xl font-bold text-white ">
           <Username />
@@ -24,7 +24,7 @@ function home() {
       {/* ROW 1 */}
 
       <div className="flex flex-col gap-5">
-        <div className=" !no-scrollbar  col-span-12 flex gap-5 overflow-x-auto   ">
+        <div className=" no-scrollbar  col-span-12 flex gap-5 overflow-x-auto   ">
           <ChartContainer
             title="Arms"
             icon={<MdHandshake size={30} className=" text-accent" />}
@@ -252,3 +252,42 @@ const ProgressCircle = ({ radius = 20123123, progress = 500 }) => {
 };
 
 export default withLayout(home);
+
+// unused 3rd row square
+
+// {
+//   /* SOCIALS */
+// }
+// <div className="  flex  flex-1 flex-col bg-primary p-6   ">
+//   <p className="flex items-center gap-2 font-medium  capitalize ">
+//     Where to contact me
+//   </p>
+
+//   <div className="mt-4 flex flex-col  justify-center ">
+//     <div className="flex items-center gap-2  p-[6px]  ">
+//       <FaGithub className=" text-accent" size={22} />{" "}
+//       <p className="    font-medium  ">Github</p>
+//     </div>
+
+//     <div className="my-2 h-[1px] bg-secondary" />
+
+//     <div className=" flex items-center gap-2 p-[6px] ">
+//       <FaDiscord className=" text-accent" size={22} />{" "}
+//       <p className="    font-medium  ">Discord</p>
+//     </div>
+
+//     <div className="my-2 h-[1px] bg-secondary" />
+
+//     <div className="flex items-center gap-2 p-[6px]  ">
+//       <MdMail className=" text-accent" size={22} />{" "}
+//       <p className="   font-medium  ">Mail</p>
+//     </div>
+
+//     <div className="my-2 h-[1px] bg-secondary" />
+
+//     <div className="flex items-center gap-2 p-[6px]  ">
+//       <FaInstagram className=" text-accent" size={22} />{" "}
+//       <p className="  font-medium  ">Instagram</p>
+//     </div>
+//   </div>
+// </div>;
